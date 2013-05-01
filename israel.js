@@ -11,7 +11,7 @@ var rregion = 'all';
 // Chart dimensions.
 var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
     width = 750 - margin.right,
-    height = 350 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom;
 
 // Various scales. These domains make assumptions of data, naturally.
 var xScale = d3.scale.linear().domain([1965, 2000]).range([0, width]),
@@ -105,12 +105,12 @@ d3.json("../pop.json", function(nations) {
         .attr("height", box.height)
         /*.on("mouseover", enableInteraction);*/
 
-  var next = d3.select("body")
+  var next = d3.select("#year_toggle")
         .append("div")
         .attr("id","next")
         .text("next")
         .on("click", enableInteraction);
-  var prev = d3.select("body")
+  var prev = d3.select("#year_toggle")
         .append("div")
         .attr("id","prev")
         .text("prev")
