@@ -1,0 +1,334 @@
+/*@import url(style.css?20120427);
+*/
+/*@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:600,600italic);
+*/
+
+/*starting main page css */
+
+/** {
+  outline: 1px dashed;
+}*/
+
+@font-face {
+    font-family: 'Josefin Slab';
+    src: url('fonts/JosefinSlab-SemiBold-webfont.eot');
+    src: url('fonts/JosefinSlab-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/JosefinSlab-SemiBold-webfont.woff') format('woff'),
+         url('fonts/JosefinSlab-SemiBold-webfont.ttf') format('truetype'),
+         url('fonts/JosefinSlab-SemiBold-webfont.svg#JosefinSlabSemiBold') format('svg');
+    font-weight: normal;
+    font-style: bold;
+
+}
+
+@font-face {
+    font-family: 'League';
+    src: url('fonts/LeagueGothic-CondensedRegular-webfont.eot');
+    src: url('fonts/LeagueGothic-CondensedRegular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/LeagueGothic-CondensedRegular-webfont.woff') format('woff'),
+         url('fonts/LeagueGothic-CondensedRegular-webfont.ttf') format('truetype'),
+         url('fonts/LeagueGothic-CondensedRegular-webfont.svg#LeagueGothicCondensedRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  background-color: white;
+  color: #4F5051;
+  font-family: 'Josefin Slab';
+  font-size: 1em;
+}
+
+p {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 0px;
+}
+
+h1 {
+  font-family: 'Josefin Slab'; 
+  /*font-style: normal;*/
+  font-size: 2.5em;
+  margin: 0px;
+}
+
+h2 {
+  font-family: "League"
+  font-style:normal;
+  vertical-align: bottom;
+  margin: 0px;
+}
+
+h3 {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-size: 1.25em;
+  margin:0px;
+  /*margin: .3em .3em .3em .3em;*/
+}
+
+h5 {
+  margin: 10px 0 0 0;
+}
+
+select {
+  width: 100%;
+}
+
+option {
+  font-size: 2em;
+  font-family: 'Josefin Slab';
+
+}
+
+.header {
+  width: 100%;
+  margin: auto;
+  display: inline-block;
+  background-color: #CCCCCC;
+
+}
+
+.header_content{
+  margin: auto;
+  background-color: #E6E7E8;
+  display: inline-block;
+}
+
+.slide {
+  width: 100%;
+  height: 45px;
+  display: inline-block;
+  float:left;
+/*  background-color: #FBAF17;*/
+  color: white;
+  margin-top: 20px;
+}
+
+.title {
+/*  width: 450px;*/
+/*  padding: 7px 0 0 10px;*/
+  display: inline-block;
+  float:left;
+  margin-top:53px;
+}
+
+.subtitle {
+  width: 300px;
+  margin-top: 5px;
+  float:left;
+}
+
+.third {
+  width: 200px;
+  padding: .5em;
+  /*width: 30.5%;*/
+  height: 100%;
+  display: inline-block;
+  display: inline;
+  float: left;
+  vertical-align: middle;
+  /*background-color: #E6E7E8;*/
+}
+
+.half {
+/*  width: 47.85%;*/
+  float:left;
+  padding: 10px 10px 10px 10px;
+}
+
+.two-third {
+/*  padding: 10px;*/
+  margin: 0 0 0 60px;
+  width: 793px;
+  display: inline-block;
+  float:left;
+  height:100px;
+}
+
+.chart_area {
+  margin: 10px;
+  width: 100%;
+  height: 400px;
+  display: inline-block;
+  float:left;
+}
+
+.svgLoaded {
+  margin: auto;
+}
+
+label {  
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;
+    margin-left: 25px;  
+
+    padding-left: 25px;  
+    margin-right: 15px;  
+    font-size: 1.5em;  
+} 
+
+input[type=radio] {  
+    display: none;  
+}  
+
+label:before {  
+    content: "";  
+    display: inline-block;  
+  
+    width: 16px;  
+    height: 16px;  
+  
+    margin-right: 10px;  
+    position: absolute;  
+    left: 0;  
+    bottombottom: 1px;  
+    background-color: white;  
+}  
+
+.radio label:before {  
+    border-radius: 8px;  
+} 
+
+input[type=radio]:checked + label:before {  
+    content: "\2022";  
+    color: #FBAF17;  
+
+    font-size: 30px;  
+    text-align: center;  
+    line-height: 18px;  
+}
+
+/*#year_slider {
+  height: 5.7em;
+}*/
+
+#other_data {
+  margin-top: 20px;
+}
+
+#main_year {
+  font-size: 5em;
+  vertical-align: baseline;
+}
+
+#year_slider{
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  /*  background-color: #BBBDC0;
+  height: 5.7em;*/
+}
+
+/*map style*/
+#map {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+#Gaza polygon{
+  fill: #51B7CE;
+}
+
+#Gaza polygon:hover{
+  fill: #59C2D3;
+}
+
+#Etzion_x5F_Bloc path {
+  fill: #91F4CE;
+}
+
+#Etzion_x5F_Bloc path:hover {
+  fill: #A5F9D7;
+}
+
+#Jordan_x5F_Valley path {
+  fill: #C4C911;
+}
+
+#Jordan_x5F_Valley path:hover {
+  fill: #D6D61A;
+}
+
+#Samaria path {
+  fill: #89FFFF;
+}
+
+#Samaria path:hover {
+  fill: #A9FFFD;
+}
+
+#Benjamin path {
+  fill: #E27D83;
+}
+
+#Benjamin path:hover {
+  fill: #E59199;
+}
+
+#Megilot path {
+  fill: #FFC000;
+}
+
+#Megilot path:hover {
+  fill: #FFC931;
+}
+
+#Mount_x5F_Hebron path {
+  fill: #FF7D46;
+}
+
+#Mount_x5F_Hebron path:hover {
+  fill: #FF926C;
+}
+
+#water polygon{
+  fill: #DDDDDD;
+}
+
+
+/*chart css*/
+
+#chart {
+  float: left;
+  margin: auto;
+}
+
+#text {
+  font: 10px "Josefin Slab";
+}
+
+.dot {
+  stroke: #000;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.label {
+  fill: #777;
+}
+
+.year.label {
+  font: 500 196px "Helvetica Neue";
+  fill: #ddd;
+}
+
+.year.label.active {
+  fill: #aaa;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+  cursor: ew-resize;
+}
