@@ -7,38 +7,57 @@
         type="text/javascript"></script>
   </head>
   <body>
+    
     <div class="header">
-      <div class="third">
-        <p>In January of 2013&#44; the United Nations issued the first report on the broad policy of Israeli settlements&#44; concluding that &ldquo;the government&rsquo;s practice of &ldquo;creeping annexation&rdquo; clearly violates the human rights of Palestinians&#44; and called for the country to immediately stop the practice&#46;&rsquo;  &#95;CBSNews&#46;com</p>
-      </div>
-      <div class="third">
-        <h3>What does settlement growth look like in:</h3>
-        <nav>
-          <ul>
-            <li>West Bank</li>
-            <li>Gaza Strip</li>
-          </ul>
-        </nav>
-      </div>
+      <div class="two-third">
+        
+        <div class= "title_wrap">
+          <div class="title">  
+            <h1>Little Town in the Desert</h1>
+          </div>
+          <div class="subtitle">
+            <p>Israeli Settlement Growth in <br>the Palestinian Territories From 1967&mdash;2011</p>
+          </div>
+        </div>
+        
+        <div class="half">
+          <p>The visualization looks at the changes in Israeli settlements and their population after World War II. What settlement growth look like&#63; Is there any correlation between periods of settlement expansion and historical events of the time&#63;</p>
+        </div>
+
+        <div class="radio half" id="choose_settlement">
+          <!--// radio buttons //-->
+            <h3>What does settlement growth look like in:</h3>
+            <input id="west_bank" type="radio" name="territory" value="west_bank">  
+            <label for="west_bank">Gasa Strip</label>  
+
+            <input id="gaza_strip" type="radio" name="territory" value="gaza_strip">
+            <label for="gaza_strip">West Bank</label>  
+        </div>
+    </div>
+
       <div class="third" id="year_toggle">
         <h1>2013</h1>
-
       </div>
     </div>
+
+    <!--// settlement chart is here //-->
+    
     <div class="chart_area">
-        <!--// settlement chart is here //-->
+      <div class="two-third">
           <p id="chart"></p>
+      </div>
       <div class="third">
         </p>Historical data goes here.</p>
       </div>
     </div>
-    <div>
-      <div class="third">
+    <!--// other charts and stats here //-->
+    <div class="two-third">
+      <div class="half">
         </p>Map data goes here.</p>
       </div>
-      <div class="third">
+      <div class="half">
         </p>Total population goes here.</p>
-      </div>
+      </div>   
     </div>
   </body>    
 

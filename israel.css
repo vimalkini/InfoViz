@@ -1,5 +1,5 @@
-@import url(style.css?20120427);
-
+/*@import url(style.css?20120427);
+*/
 /*@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:600,600italic);
 */
 
@@ -10,51 +10,61 @@
 }*/
 
 @font-face {
-    font-family: 'Josefin Slab';
+    font-family: 'Josefin Slab2';
     src: url('fonts/JosefinSlab-SemiBold-webfont.eot');
     src: url('fonts/JosefinSlab-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/JosefinSlab-SemiBold-webfont.woff') format('woff'),
          url('fonts/JosefinSlab-SemiBold-webfont.ttf') format('truetype'),
          url('fonts/JosefinSlab-SemiBold-webfont.svg#JosefinSlabSemiBold') format('svg');
     font-weight: normal;
-    font-style: normal;
+    font-style: bold;
 
 }
 
 @font-face {
-    font-family: 'Josefin Slab2';
-    src: url('fonts/JosefinSlab-SemiBoldItalic-webfont.eot');
-    src: url('fonts/JosefinSlab-SemiBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/JosefinSlab-SemiBoldItalic-webfont.woff') format('woff'),
-         url('fonts/JosefinSlab-SemiBoldItalic-webfont.ttf') format('truetype'),
-         url('fonts/JosefinSlab-SemiBoldItalic-webfont.svg#JosefinSlabSemiBoldItalic') format('svg');
+    font-family: 'Josefin Slab';
+    src: url('fonts/JosefinSlab-Regular-webfont.eot');
+    src: url('fonts/JosefinSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/JosefinSlab-Regular-webfont.woff') format('woff'),
+         url('fonts/JosefinSlab-Regular-webfont.ttf') format('truetype'),
+         url('fonts/JosefinSlab-Regular-webfont.svg#JosefinSlabRegular') format('svg');
     font-weight: normal;
-    font-style: italic;
+    font-style: normal;
+
 }
 
 body {
   background-color: white;
   color: #4F5051;
   font-family: 'Josefin Slab';
-  
   font-size: 1em;
 }
 
 p {
   font-family: 'Josefin Slab';
+  font-style: normal;
   font-size: 1em;
+  line-height: 1.25em;
+  margin: 0px;
+}
+
+.title p {
+  font-family: 'Josefin Slab';
+  font-style: italic;
 }
 
 h1 {
-  font-family: 'Josefin Slab2';
-  font-size: 4em;
+  font-family: 'Josefin Slab'; 
+  /*font-style: normal;*/
+  font-size: 2.5em;
   margin: 0px;
 }
 
 h3 {
-  font-family: 'Josefin Slab2';
-  font-size: 2em;
-  margin: 0px;
+  font-family: 'Josefin Slab';
+  font-style: italic;
+  font-size: 1.5em;
+  margin: .3em .3em .3em .3em;
 }
 
 select {
@@ -67,28 +77,65 @@ option {
 
 }
 
-
 .header {
+  width: 100%;
+  margin: auto;
+  display: inline-block;
+  background-color: #E6E7E8;
+
+}
+
+.header_content{
   margin: auto;
   background-color: #E6E7E8;
   display: inline-block;
+
+}
+
+.title_wrap {
+  width: 100%;
+  height: 45px;
+  display: inline-block;
+  float:left;
+  background-color: #FBAF17;
+  color: white;
+
+}
+
+.title {
+  width: 450px;
+  float:left;
+  padding: 7px 0 0 10px;
+}
+
+.subtitle {
+  width: 450px;
+  margin-top: 5px;
+  float:left;
 }
 
 .third {
-  /*padding: 10px;*/
-  width: 31.85%;
+  padding: .5em;
+  width: 30.5%;
   height: 100%;
   display: inline-block;
   display: inline;
   float:left;
-  margin: 0 10px 0 10px;
   vertical-align: middle;
+  background-color: #E6E7E8;
+  margin-top: 20px;
+}
+
+.half {
+  width: 47.85%;
+  float:left;
+  padding: 10px 10px 10px 10px;
+
 }
 
 .two-third {
 /*  padding: 10px;*/
-  width: 66.6%;
-  height: 250px;
+  width: 940px;
   display: inline-block;
   float:left;
 }
@@ -100,6 +147,57 @@ option {
   display: inline-block;
   float:left;
 }
+
+label {  
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;
+    margin-left: 50px;  
+
+    padding-left: 25px;  
+    margin-right: 15px;  
+    font-size: 1.5em;  
+} 
+
+input[type=radio] {  
+    display: none;  
+}  
+
+label:before {  
+    content: "";  
+    display: inline-block;  
+  
+    width: 16px;  
+    height: 16px;  
+  
+    margin-right: 10px;  
+    position: absolute;  
+    left: 0;  
+    bottombottom: 1px;  
+    background-color: white;  
+}  
+
+.radio label:before {  
+    border-radius: 8px;  
+} 
+
+input[type=radio]:checked + label:before {  
+    content: "\2022";  
+    color: #FBAF17;  
+
+    font-size: 30px;  
+    text-align: center;  
+    line-height: 18px;  
+}
+
+#choose_settlement{
+  background-color: #BBBDC0;
+  height: 5em;
+}
+
+#year_toggle{
+}
+
 
 /*chart css*/
 
