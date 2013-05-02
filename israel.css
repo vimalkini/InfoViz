@@ -122,8 +122,8 @@ option {
   display: inline;
   float:left;
   vertical-align: middle;
-  background-color: #E6E7E8;
-  margin-top: 20px;
+/*  background-color: #E6E7E8;
+*/  margin-top: 20px;
 }
 
 .half {
@@ -196,6 +196,13 @@ input[type=radio]:checked + label:before {
 }
 
 #year_toggle{
+}
+
+/*map style*/
+#map {
+  outline: 1px;
+/*  background-color: #E6E7E8;*/
+
 }
 
 
