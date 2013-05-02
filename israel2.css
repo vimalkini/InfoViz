@@ -90,7 +90,8 @@ option {
 }
 
 .header {
-  width: 100%;
+  width: 1024px;
+  height: 161px;
   margin: auto;
   display: inline-block;
   background-color: #CCCCCC;
