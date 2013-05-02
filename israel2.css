@@ -34,10 +34,14 @@
 }
 
 body {
+  margin-right: auto;
+  margin-left: auto;
   background-color: white;
   color: #4F5051;
   font-family: 'Josefin Slab';
   font-size: 1em;
+  width: 1024px;
+  overflow: hidden;
 }
 
 p {
@@ -56,8 +60,9 @@ h1 {
 }
 
 h2 {
-  font-family: "League"
+  font-size: 1.2em;
   font-style:normal;
+  color: #F47E1F;
   vertical-align: bottom;
   margin: 0px;
 }
@@ -89,7 +94,7 @@ option {
   margin: auto;
   display: inline-block;
   background-color: #CCCCCC;
-
+  opacity: .7;
 }
 
 .header_content{
@@ -99,7 +104,7 @@ option {
 }
 
 .slide {
-  width: 100%;
+  width: 103%;
   height: 45px;
   display: inline-block;
   float:left;
@@ -110,10 +115,15 @@ option {
 
 .title {
 /*  width: 450px;*/
-/*  padding: 7px 0 0 10px;*/
+  padding: 10px;
   display: inline-block;
   float:left;
-  margin-top:53px;
+  height: 80px;
+  margin-top:5px;
+  background-color: #DDDDDD;
+  vertical-align: middle;
+  -webkit-box-shadow: 0px 1px 2px #AAA;
+  z-index: 10;
 }
 
 .subtitle {
@@ -131,6 +141,7 @@ option {
   display: inline;
   float: left;
   vertical-align: middle;
+  z-index: -1;
   /*background-color: #E6E7E8;*/
 }
 
@@ -142,11 +153,15 @@ option {
 
 .two-third {
 /*  padding: 10px;*/
-  margin: 0 0 0 60px;
-  width: 793px;
+  margin: 0 0 0 10px;
+  width:  715px;
   display: inline-block;
   float:left;
   height:100px;
+}
+
+.chart_area .two-third {
+  height: 100%;
 }
 
 .chart_area {
@@ -212,8 +227,9 @@ input[type=radio]:checked + label:before {
 }
 
 #main_year {
-  font-size: 5em;
+  font-size: 4.5em;
   vertical-align: baseline;
+  color: #F47E1F;
 }
 
 #year_slider{
@@ -230,6 +246,7 @@ input[type=radio]:checked + label:before {
   position: fixed;
   top: 0px;
   left: 0px;
+  z-index: -1;
 }
 
 #Gaza polygon{
