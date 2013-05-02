@@ -2,9 +2,17 @@
 <html>
   <head>
     <link type = "text/css" rel = "stylesheet" href = "israel.css" />
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
     <script src="http://d3js.org/d3.v2.js?2.8.1"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
+     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+     <script>
+     $(function() {
+    $( "#slider" ).slider({ min: 1950 ,max: 2011 });
+  });
+      var value = $( "#slider" ).slider( "option", "value" );
+     </script>
   </head>
   <body>
     
@@ -36,7 +44,8 @@
     </div>
 
       <div class="third" id="year_toggle">
-        <h1>2013</h1>
+        <h1 id="main_year">2013</h1>
+        <div id="slider"></div>
       </div>
     </div>
 
