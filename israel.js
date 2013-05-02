@@ -7,7 +7,6 @@ function key(d) { return d.name; }
 
 var glyear = 1950;
 var rregion = 'all';
-
 // Chart dimensions.
 var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
     width = 750 - margin.right,
@@ -105,7 +104,7 @@ d3.json("../pop.json", function(nations) {
         .attr("height", box.height)
         /*.on("mouseover", enableInteraction);*/
 
-  var next = d3.select("#year_toggle")
+  /*var next = d3.select("#year_toggle")
         .append("div")
         .attr("id","next")
         .text("next")
@@ -114,7 +113,7 @@ d3.json("../pop.json", function(nations) {
         .append("div")
         .attr("id","prev")
         .text("prev")
-        .on("click", enableInteraction);
+        .on("click", enableInteraction);*/
 
   d3.select('#changer')
     .on("change", changer);
@@ -124,7 +123,12 @@ d3.json("../pop.json", function(nations) {
     displayYear(glyear);
   }
 
-  document.getElementById("next").onclick = function(){
+  $( "#slider" ).on( "slide", function( event, ui ) {
+    enableInteraction();
+    displayYear($( "#slider" ).slider( "value" ));
+  } );
+
+  /*document.getElementById("next").onclick = function(){
     if (glyear >= 2011.000)
       displayYear(2011);
     else if (glyear < 1950.000)
@@ -143,7 +147,7 @@ d3.json("../pop.json", function(nations) {
       displayYear(glyear - 1)
 
   };
-  
+  */
 
   // Start a transition that interpolates the data based on year.
   svg.transition()
@@ -240,6 +244,9 @@ d3.json("../pop.json", function(nations) {
     glyear = Math.round(year);
     dot.data(interpolateData(year), key).call(position).sort(order);
     label.text(Math.round(year));
+    $( "#slider" ).slider( "value", glyear )
+    $('#main_year').empty().append(glyear)
+
   }
 
   // Interpolates the dataset for the given (fractional) year.

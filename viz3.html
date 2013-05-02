@@ -6,15 +6,19 @@
   <script src="http://d3js.org/d3.v2.js?2.8.1"></script>
   <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
   <script type="text/javascript">
 	function test(){
 		console.log(glyear);
 	}
+
+  $(function() {
+    $( "#slider" ).slider();
+  });
 </script>
 </head>
 
 <h1>Israeli Settlement Growth, 1951- 2011</h1>
-
 <p id="chart" style="margin:auto"></p>
 
 <aside>Mouseover the year to move forward and backwards through time.</aside>
