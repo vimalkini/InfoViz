@@ -239,6 +239,18 @@ d3.json("../pop.json", function(nations) {
     return function(t) { displayYear(year(t)); };
   }
 
+var events = {};
+function showevent(glyear) {
+	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/events.json', function(json) {
+		$.each(json, function(key, val) {
+		    events[key] = val;
+		  });
+		year = glyear;
+		$("#eventdiv").html('')
+		$("#eventdiv").append(events[year]);
+		});
+	}
+
   // Updates the display to show the specified year.
   function displayYear(year) {
     glyear = Math.round(year);
@@ -246,6 +258,9 @@ d3.json("../pop.json", function(nations) {
     label.text(Math.round(year));
     $( "#slider" ).slider( "value", glyear )
     $('#main_year').empty().append(glyear)
+	//display events code start
+	showevent(glyear)
+	//display events code start
 
   }
 
