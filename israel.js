@@ -250,6 +250,52 @@ function showevent(glyear) {
 		$("#eventdiv").append(events[year]);
 		});
 	}
+	var casualties = {};
+	function showcasualtieschart(glyear){
+	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/casualties.json', function(json) {
+		$.each(json, function(key, val) {
+		    casualties[key] = val;
+		  });
+		year = glyear;
+		dataArray = casualties[year]
+		//var dataArray = [20, 35, 50, 60];
+		
+		var canvaswidth = 500; 
+		var canvasheight = 500;
+
+		var heightscale = d3.scale.linear()
+							.domain([0,60])
+							.range([0,canvasheight]);
+
+		var colorscale = d3.scale.linear()
+							.domain([0,60])
+							.range(["red","green"]);
+
+		var axis = d3.svg.axis()
+					.ticks(5)
+					.scale(heightscale);
+
+		var canvas = d3.select("body")
+		  				.append("svg")
+		  				.attr("width", canvaswidth)
+						.attr("height", canvasheight)
+						.append("g");
+						//.attr("transform", "translate(200,200)");
+
+	    var barChart = canvas.selectAll("rect")
+						.data(dataArray)
+						.enter()
+							.append("rect")
+							.attr("height", function(d){ return heightscale(d) })
+							.attr("width", 10)
+							.attr("fill", function(d){ return colorscale(d) })
+							.attr("x", function(d,i) {return i*50} )
+							.attr("y", 100 );
+		/*canvas.append("g")
+				.attr("transform", "translate(0,200)")
+				.call(axis);*/
+	});
+	}
 
   // Updates the display to show the specified year.
   function displayYear(year) {
@@ -261,7 +307,9 @@ function showevent(glyear) {
 	//display events code start
 	showevent(glyear)
 	//display events code start
-
+	//display casualties code start
+	showcasualtieschart(glyear);
+	//display casualties code start
   }
 
   // Interpolates the dataset for the given (fractional) year.
