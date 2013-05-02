@@ -89,7 +89,6 @@ option {
   margin: auto;
   background-color: #E6E7E8;
   display: inline-block;
-
 }
 
 .title_wrap {
@@ -99,7 +98,6 @@ option {
   float:left;
   background-color: #FBAF17;
   color: white;
-
 }
 
 .title {
@@ -122,7 +120,7 @@ option {
   display: inline;
   float:left;
   vertical-align: middle;
-  background-color: #E6E7E8;
+  /*background-color: #E6E7E8;*/
   margin-top: 20px;
 }
 
@@ -190,6 +188,10 @@ input[type=radio]:checked + label:before {
     line-height: 18px;  
 }
 
+#other_data {
+  margin-top: 20px;
+}
+
 #choose_settlement{
   background-color: #BBBDC0;
   height: 5em;
@@ -200,7 +202,7 @@ input[type=radio]:checked + label:before {
 
 /*map style*/
 #map {
-  background-color: #E6E7E8;
+  /*background-color: #E6E7E8;*/
 }
 
 #Gaza polygon{
@@ -224,7 +226,7 @@ input[type=radio]:checked + label:before {
 }
 
 #Jordan_x5F_Valley path:hover {
-  fill: #C4C911;
+  fill: #D6D61A;
 }
 
 #Samaria path {
