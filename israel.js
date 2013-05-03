@@ -6,7 +6,6 @@ function color(d) { return d.region; }
 function key(d) { return d.name; }
 
 var glyear = 1950;
-var rregion = 'all';
 // Chart dimensions.
 var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
     width = 750 - margin.right,
@@ -15,7 +14,7 @@ var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
 // Various scales. These domains make assumptions of data, naturally.
 var xScale = d3.scale.linear().domain([1965, 2000]).range([0, width]),
     yScale = d3.scale.log().domain([1e1, 120000]).range([height, 0]),
-    radiusScale = d3.scale.sqrt().domain([0, 100000]).range([0, 70]),
+    radiusScale = d3.scale.sqrt().domain([1, 100000]).range([1, 70]),
     colorScale = d3.scale.category10();
 
 // The x & y axes.
@@ -128,6 +127,11 @@ d3.json("../pop.json", function(nations) {
     displayYear($( "#slider" ).slider( "value" ));
   } );
 
+  $('.check_region').change(function(){
+    enableInteraction();
+    displayYear(glyear)
+  });
+
   /*document.getElementById("next").onclick = function(){
     if (glyear >= 2011.000)
       displayYear(2011);
@@ -181,11 +185,24 @@ d3.json("../pop.json", function(nations) {
 
         if (status == 'visible')
           {
-            if (rregion.toLowerCase() != 'all')
+           var temp = d.region.toLowerCase().split(" ");
+           if (temp.length > 1)
+           {
+            id_check = '#check_'+temp[0];
+           }
+           else
+           {id_check = '#check_'+d.region.toLowerCase();}
+           status = 'hidden'
+           if ($(id_check).is(':checked')){
+              status = 'visible'
+           }
+            /*if (rregion.toLowerCase() != 'all')
             {
               if (d.region.toLowerCase() != rregion.toLowerCase())
                 status = 'hidden'
-            }
+            }*/
+            console.log(radiusScale(radius(d)));
+            console.log(xScale(x(d)));
             
           }
         return status;
