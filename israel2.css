@@ -11,13 +11,13 @@
 
 @font-face {
     font-family: 'Josefin Slab';
-    src: url('fonts/JosefinSlab-SemiBold-webfont.eot');
-    src: url('fonts/JosefinSlab-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/JosefinSlab-SemiBold-webfont.woff') format('woff'),
-         url('fonts/JosefinSlab-SemiBold-webfont.ttf') format('truetype'),
-         url('fonts/JosefinSlab-SemiBold-webfont.svg#JosefinSlabSemiBold') format('svg');
+    src: url('fonts/JosefinSlab-Regular-webfont.eot');
+    src: url('fonts/JosefinSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/JosefinSlab-Regular-webfont.woff') format('woff'),
+         url('fonts/JosefinSlab-Regular-webfont.ttf') format('truetype'),
+         url('fonts/JosefinSlab-Regular-webfont.svg#JosefinSlabRegular') format('svg');
     font-weight: normal;
-    font-style: bold;
+    font-style: normal;
 
 }
 
@@ -60,9 +60,9 @@ h1 {
 
 h2 {
   font-family: 'Josefin Slab'; 
-  font-size: 1.2em;
+  font-size: 1.6em;
   font-style:normal;
-  color: #F47E1F;
+  color: white;
   vertical-align: bottom;
   margin: 0px;
 }
@@ -70,7 +70,7 @@ h2 {
 h3 {
   font-family: 'OpenSansCondensedLight';
   font-style: normal;
-  font-size: 1.25em;
+  font-size: 1.5em;
   margin:0px;
   /*margin: .3em .3em .3em .3em;*/
 }
@@ -107,11 +107,11 @@ option {
 }
 
 .slide {
-  width: 103%;
+  width: 80%;
   height: 45px;
   display: inline-block;
-  float:left;
-/*  background-color: #FBAF17;*/
+  float:right;
+/*  background-color: #F47E1F;*/
   color: white;
   margin-top: 20px;
   z-index: 8;
@@ -119,12 +119,12 @@ option {
 
 .title {
 /*  width: 450px;*/
-  padding: 10px;
+  padding: 27px;
   display: inline-block;
   float:left;
   height: 80px;
   margin-right: 30px;
-  margin-top:5px;
+  margin-top:0px;
   background-color: #DDDDDD;
   vertical-align: middle;
   -webkit-box-shadow: 0px 1px 2px #AAA;
@@ -185,9 +185,10 @@ option {
 }
 
 .checkboxes {
-  margin: 0px; 
+  margin: 30px 0 0 0; 
   display: inline-block;
   float: left;
+  line-height: 20px;
 }
 
 label {  
@@ -223,7 +224,7 @@ label:before {
 
 input[type=checkbox]:checked + label:before {  
     content: "\2713";  
-    color: #FBAF17;  
+    color: #F47E1F;  
     font-size: 1em;  
     text-align: center;  
     line-height: 18px;  
@@ -240,8 +241,9 @@ input[type=checkbox]:checked + label:before {
   border-top-right-radius: 0px;
   border: 0px;
   background: white;
-  height: 10px;
-
+  height: 8px;
+  width: 900px;
+  margin-top:0px;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
@@ -275,6 +277,35 @@ input[type=checkbox]:checked + label:before {
   display: block;
   /*  background-color: #BBBDC0;
   height: 5.7em;*/
+}
+
+#year_display {
+  display: inline-block;
+}
+
+.question_area {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  width:  670px;
+  display: inline-block;
+  float:left;
+  height:100px;
+}
+
+#question {
+  display: inline-block;
+  width: 400px;
+  line-height: 3em;
+  text-align: right;
+}
+
+.question_mark {
+  display: inline-block;
+  width: 50px;
+  font-size: 5.5em;
+  font-family: "Josefin Slab";
+  color: white;
 }
 
 /*map style*/
