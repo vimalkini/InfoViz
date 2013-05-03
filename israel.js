@@ -170,10 +170,16 @@ d3.json("../pop.json", function(nations) {
 
   function position(dot) {
     dot .attr("cx", function(d) { return xScale(x(d)); })
-        .attr("cy", function(d) { return yScale(y(d)); })
-        .attr("r", function(d) { return radiusScale(radius(d)); })
+        .attr("cy", function(d) { if (y(d) < 1)
+                                    return yScale(1);
+                                  else
+                                    return yScale(y(d)); })
+        .attr("r", function(d) { if (radius(d) < 1)
+                                    return radiusScale(1);
+                                else
+                                    return radiusScale(radius(d)); })
         .attr("id", function(d) { return d.name;})
-        .on("mouseover", function(d){return tooltip.style("visibility", "visible").text(d.name + " " + radius(d));})
+        .on("mouseover", function(d){return tooltip.style("visibility", "visible").text(d.name + " " + Math.round(y(d)));})
         .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
         .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
          .style("visibility", function(d) {
@@ -201,8 +207,6 @@ d3.json("../pop.json", function(nations) {
               if (d.region.toLowerCase() != rregion.toLowerCase())
                 status = 'hidden'
             }*/
-            console.log(radiusScale(radius(d)));
-            console.log(xScale(x(d)));
             
           }
         return status;
