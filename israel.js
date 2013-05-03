@@ -1,3 +1,13 @@
+
+var events = {};
+$(document).ready(function() {
+	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/events.json', function(json) {
+		$.each(json, function(key, val) {
+		    events[key] = val;
+		  });
+	})
+});
+
 // Various accessors that specify the four dimensions of data to visualize.
 function x(d) { return d.x; }
 function y(d) { return d.y; }
@@ -19,7 +29,10 @@ var xScale = d3.scale.linear().domain([1965, 2000]).range([0, width]),
 
 // The x & y axes.
 var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d")),
-    yAxis = d3.svg.axis().scale(yScale).orient("left");
+    //yAxis = d3.svg.axis().scale(yScale).orient("left");
+	yAxis = d3.svg.axis().scale(yScale).orient("left").tickFormat(function (d) {
+	        return yScale.tickFormat(4,d3.format(",d"))(d)
+	});
 
 // Create the SVG container and set the origin.
 var svg = d3.select("#chart").append("svg")
@@ -58,12 +71,12 @@ svg.append("text")
 
 // Add the year label; the value is set on transition. The big date.
 
-var label = svg.append("text")
+/*var label = svg.append("text")
     .attr("class", "year label")
     .attr("text-anchor", "end")
     .attr("y", height - 24)
     .attr("x", width)
-    .text(1800);
+    .text(1800);*/
 
 // Load the data from the json file.
 d3.json("../pop.json", function(nations) {
@@ -93,9 +106,9 @@ d3.json("../pop.json", function(nations) {
   /*elem.onclick = bind(function() {
     alert(this) 
   }, this);*/
-  var box = label.node().getBBox();
+  /*var box = label.node().getBBox();*/
 
-  var overlay = svg.append("rect")
+  /*var overlay = svg.append("rect")
         .attr("class", "overlay")
         .attr("x", box.x)
         .attr("y", box.y)
@@ -170,10 +183,16 @@ d3.json("../pop.json", function(nations) {
 
   function position(dot) {
     dot .attr("cx", function(d) { return xScale(x(d)); })
-        .attr("cy", function(d) { return yScale(y(d)); })
-        .attr("r", function(d) { return radiusScale(radius(d)); })
+        .attr("cy", function(d) { if (y(d) < 1)
+                                    return yScale(1);
+                                  else
+                                    return yScale(y(d)); })
+        .attr("r", function(d) { if (radius(d) < 1)
+                                    return radiusScale(1);
+                                else
+                                    return radiusScale(radius(d)); })
         .attr("id", function(d) { return d.name;})
-        .on("mouseover", function(d){return tooltip.style("visibility", "visible").text(d.name + " " + radius(d));})
+        .on("mouseover", function(d){return tooltip.style("visibility", "visible").text(d.name + " " + Math.round(y(d)));})
         .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
         .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
          .style("visibility", function(d) {
@@ -201,8 +220,6 @@ d3.json("../pop.json", function(nations) {
               if (d.region.toLowerCase() != rregion.toLowerCase())
                 status = 'hidden'
             }*/
-            console.log(radiusScale(radius(d)));
-            console.log(xScale(x(d)));
             
           }
         return status;
@@ -217,15 +234,15 @@ d3.json("../pop.json", function(nations) {
 
   // After the transition finishes, you can mouseover to change the year.
   function enableInteraction() {
-    var yearScale = d3.scale.linear()
+    /*var yearScale = d3.scale.linear()
         .domain([1950, 2011])
         .range([box.x + 10, box.x + box.width - 10])
-        .clamp(true);
+        .clamp(true);*/
 
     // Cancel the current transition, if any.
     svg.transition().duration(0);
 
-    overlay
+   /* overlay
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
         .on("mousemove", mousemove)
@@ -241,7 +258,7 @@ d3.json("../pop.json", function(nations) {
 
     function mousemove() {
       displayYear(yearScale.invert(d3.mouse(this)[0]));
-    }
+    }*/
 
     /*next.on("click",nextyear);
     function nextyear(){
@@ -256,69 +273,28 @@ d3.json("../pop.json", function(nations) {
     return function(t) { displayYear(year(t)); };
   }
 
-var events = {};
 function showevent(glyear) {
-	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/events.json', function(json) {
-		$.each(json, function(key, val) {
-		    events[key] = val;
-		  });
 		year = glyear;
 		$("#eventdiv").html('')
-		$("#eventdiv").append(events[year]);
-		});
-	}
-	var casualties = {};
-	function showcasualtieschart(glyear){
-	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/casualties.json', function(json) {
-		$.each(json, function(key, val) {
-		    casualties[key] = val;
-		  });
-		year = glyear;
-		dataArray = casualties[year]
-		//var dataArray = [20, 35, 50, 60];
-		
-		var canvaswidth = 500; 
-		var canvasheight = 500;
+		if((null != events[year]) ){
+			$("#eventdiv").append('<b>' + year + ' <b>');
+			allevents = events[year];
+			yearsummary = allevents['summary']
+			$("#eventdiv").append(yearsummary);
+			delete allevents['summary'];
+			for (var key in allevents) {
+				$("#eventdiv").append('<br>' + '<b>' + key + ': </b>' + allevents[key]);
+			}
 
-		var heightscale = d3.scale.linear()
-							.domain([0,60])
-							.range([0,canvasheight]);
+		}
 
-		var colorscale = d3.scale.linear()
-							.domain([0,60])
-							.range(["red","green"]);
-
-		var axis = d3.svg.axis()
-					.ticks(5)
-					.scale(heightscale);
-
-		var canvas = d3.select("body")
-		  				.append("svg")
-		  				.attr("width", canvaswidth)
-						.attr("height", canvasheight)
-						.append("g");
-						//.attr("transform", "translate(200,200)");
-
-	    var barChart = canvas.selectAll("rect")
-						.data(dataArray)
-						.enter()
-							.append("rect")
-							.attr("height", function(d){ return heightscale(d) })
-							.attr("width", 10)
-							.attr("fill", function(d){ return colorscale(d) })
-							.attr("x", function(d,i) {return i*50} )
-							.attr("y", 100 );
-		/*canvas.append("g")
-				.attr("transform", "translate(0,200)")
-				.call(axis);*/
-	});
 	}
 
   // Updates the display to show the specified year.
   function displayYear(year) {
     glyear = Math.round(year);
     dot.data(interpolateData(year), key).call(position).sort(order);
-    label.text(Math.round(year));
+    /*label.text(Math.round(year));*/
     $( "#slider" ).slider( "value", glyear )
     $('#main_year').empty().append(glyear)
 	//display events code start
