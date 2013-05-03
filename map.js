@@ -10,4 +10,15 @@ $(function(){
         }
  
     });
+
+    /*$('#map').bind('click', function() {
+		  console.log($('#map > svg > g'));
+		});
+	$('#map > svg > g').bind('click',function(){
+		console.log("Entered");
+	});*/
+
+	$( "g").bind('click',function(){
+		console.log("entered");
+	});
 });
