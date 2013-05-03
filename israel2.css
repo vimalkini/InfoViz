@@ -22,15 +22,14 @@
 }
 
 @font-face {
-    font-family: 'League';
-    src: url('fonts/LeagueGothic-CondensedRegular-webfont.eot');
-    src: url('fonts/LeagueGothic-CondensedRegular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/LeagueGothic-CondensedRegular-webfont.woff') format('woff'),
-         url('fonts/LeagueGothic-CondensedRegular-webfont.ttf') format('truetype'),
-         url('fonts/LeagueGothic-CondensedRegular-webfont.svg#LeagueGothicCondensedRegular') format('svg');
+    font-family: 'OpenSansCondensedLight';
+    src: url('fonts/OpenSans-CondLight-webfont.eot');
+    src: url('fonts/OpenSans-CondLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-CondLight-webfont.woff') format('woff'),
+         url('fonts/OpenSans-CondLight-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-CondLight-webfont.svg#OpenSansCondensedLight') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 body {
@@ -40,7 +39,7 @@ body {
   color: #4F5051;
   font-family: 'Josefin Slab';
   font-size: 1em;
-  width: 1024px;
+  /*width: 100%;*/
   overflow: hidden;
 }
 
@@ -53,13 +52,14 @@ p {
 }
 
 h1 {
-  font-family: 'Josefin Slab'; 
+  font-family: 'OpenSansCondensedLight'; 
   /*font-style: normal;*/
   font-size: 2.5em;
   margin: 0px;
 }
 
 h2 {
+  font-family: 'Josefin Slab'; 
   font-size: 1.2em;
   font-style:normal;
   color: #F47E1F;
@@ -68,7 +68,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Josefin Slab';
+  font-family: 'OpenSansCondensedLight';
   font-style: normal;
   font-size: 1.25em;
   margin:0px;
@@ -90,12 +90,14 @@ option {
 }
 
 .header {
-  width: 1024px;
+  width: 100%;
   height: 161px;
-  margin: auto;
+  margin-left: auto;
+  margin-right:auto;
   display: inline-block;
   background-color: #CCCCCC;
   opacity: .7;
+  z-index: -1;
 }
 
 .header_content{
@@ -112,6 +114,7 @@ option {
 /*  background-color: #FBAF17;*/
   color: white;
   margin-top: 20px;
+  z-index: 8;
 }
 
 .title {
@@ -120,6 +123,7 @@ option {
   display: inline-block;
   float:left;
   height: 80px;
+  margin-right: 30px;
   margin-top:5px;
   background-color: #DDDDDD;
   vertical-align: middle;
@@ -154,7 +158,9 @@ option {
 
 .two-third {
 /*  padding: 10px;*/
-  margin: 0 0 0 10px;
+  /*margin: 0 0 0 10px;*/
+  margin-right: auto;
+  margin-left: auto;
   width:  715px;
   display: inline-block;
   float:left;
@@ -163,6 +169,7 @@ option {
 
 .chart_area .two-third {
   height: 100%;
+  margin-left: 45px;
 }
 
 .chart_area {
@@ -177,18 +184,27 @@ option {
   margin: auto;
 }
 
+.checkboxes {
+  margin: 0px;
+  float: left;
+  display: inline-block;
+}
+
+.checkboxes {
+  display: inline-block;
+  float: left;
+}
+
 label {  
     display: inline-block;  
-    cursor: pointer;  
+    /*cursor: pointer;  */
     position: relative;
-    margin-left: 25px;  
-
     padding-left: 25px;  
     margin-right: 15px;  
-    font-size: 1.5em;  
+    font-size: .8em;  
 } 
 
-input[type=radio] {  
+input[type=checkbox] {  
     display: none;  
 }  
 
@@ -199,22 +215,21 @@ label:before {
     width: 16px;  
     height: 16px;  
   
-    margin-right: 10px;  
+/*    margin-right: 10px;  */
     position: absolute;  
     left: 0;  
     bottombottom: 1px;  
     background-color: white;  
 }  
 
-.radio label:before {  
+/*.radio label:before {  
     border-radius: 8px;  
-} 
+} */
 
-input[type=radio]:checked + label:before {  
-    content: "\2022";  
+input[type=checkbox]:checked + label:before {  
+    content: "\2713";  
     color: #FBAF17;  
-
-    font-size: 30px;  
+    font-size: 1em;  
     text-align: center;  
     line-height: 18px;  
 }
@@ -223,11 +238,36 @@ input[type=radio]:checked + label:before {
   height: 5.7em;
 }*/
 
+#slider {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border: 0px;
+  background: white;
+  height: 10px;
+
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+  background:#F47E1F !important;
+  border: 0px !important;
+
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
 #other_data {
   margin-top: 20px;
 }
 
 #main_year {
+  font-family: "OpenSansCondensedLight";
   font-size: 4.5em;
   vertical-align: baseline;
   color: #F47E1F;
@@ -246,8 +286,8 @@ input[type=radio]:checked + label:before {
 #map {
   position: fixed;
   top: 0px;
-  left: 0px;
-  z-index: -1;
+  left: 10px;
+  z-index: 0;
 }
 
 #Gaza polygon{
