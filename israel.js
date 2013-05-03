@@ -1,3 +1,13 @@
+
+var events = {};
+$(document).ready(function() {
+	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/events.json', function(json) {
+		$.each(json, function(key, val) {
+		    events[key] = val;
+		  });
+	})
+});
+
 // Various accessors that specify the four dimensions of data to visualize.
 function x(d) { return d.x; }
 function y(d) { return d.y; }
@@ -19,7 +29,10 @@ var xScale = d3.scale.linear().domain([1965, 2000]).range([0, width]),
 
 // The x & y axes.
 var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d")),
-    yAxis = d3.svg.axis().scale(yScale).orient("left");
+    //yAxis = d3.svg.axis().scale(yScale).orient("left");
+	yAxis = d3.svg.axis().scale(yScale).orient("left").tickFormat(function (d) {
+	        return yScale.tickFormat(4,d3.format(",d"))(d)
+	});
 
 // Create the SVG container and set the origin.
 var svg = d3.select("#chart").append("svg")
@@ -260,62 +273,21 @@ d3.json("../pop.json", function(nations) {
     return function(t) { displayYear(year(t)); };
   }
 
-var events = {};
 function showevent(glyear) {
-	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/events.json', function(json) {
-		$.each(json, function(key, val) {
-		    events[key] = val;
-		  });
 		year = glyear;
 		$("#eventdiv").html('')
-		$("#eventdiv").append(events[year]);
-		});
-	}
-	var casualties = {};
-	function showcasualtieschart(glyear){
-	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/casualties.json', function(json) {
-		$.each(json, function(key, val) {
-		    casualties[key] = val;
-		  });
-		year = glyear;
-		dataArray = casualties[year]
-		//var dataArray = [20, 35, 50, 60];
-		
-		var canvaswidth = 500; 
-		var canvasheight = 500;
+		if((null != events[year]) ){
+			$("#eventdiv").append('<b>' + year + ' <b>');
+			allevents = events[year];
+			yearsummary = allevents['summary']
+			$("#eventdiv").append(yearsummary);
+			delete allevents['summary'];
+			for (var key in allevents) {
+				$("#eventdiv").append('<br>' + '<b>' + key + ': </b>' + allevents[key]);
+			}
 
-		var heightscale = d3.scale.linear()
-							.domain([0,60])
-							.range([0,canvasheight]);
+		}
 
-		var colorscale = d3.scale.linear()
-							.domain([0,60])
-							.range(["red","green"]);
-
-		var axis = d3.svg.axis()
-					.ticks(5)
-					.scale(heightscale);
-
-		/*var canvas = d3.select("body")
-		  				.append("svg")
-		  				.attr("width", canvaswidth)
-						.attr("height", canvasheight)
-						.append("g");*/
-						//.attr("transform", "translate(200,200)");
-
-	    /*var barChart = canvas.selectAll("rect")
-						.data(dataArray)
-						.enter()
-							.append("rect")
-							.attr("height", function(d){ return heightscale(d) })
-							.attr("width", 10)
-							.attr("fill", function(d){ return colorscale(d) })
-							.attr("x", function(d,i) {return i*50} )
-							.attr("y", 100 );*/
-		/*canvas.append("g")
-				.attr("transform", "translate(0,200)")
-				.call(axis);*/
-	});
 	}
 
   // Updates the display to show the specified year.
