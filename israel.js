@@ -58,12 +58,12 @@ svg.append("text")
 
 // Add the year label; the value is set on transition. The big date.
 
-var label = svg.append("text")
+/*var label = svg.append("text")
     .attr("class", "year label")
     .attr("text-anchor", "end")
     .attr("y", height - 24)
     .attr("x", width)
-    .text(1800);
+    .text(1800);*/
 
 // Load the data from the json file.
 d3.json("../pop.json", function(nations) {
@@ -93,9 +93,9 @@ d3.json("../pop.json", function(nations) {
   /*elem.onclick = bind(function() {
     alert(this) 
   }, this);*/
-  var box = label.node().getBBox();
+  /*var box = label.node().getBBox();*/
 
-  var overlay = svg.append("rect")
+  /*var overlay = svg.append("rect")
         .attr("class", "overlay")
         .attr("x", box.x)
         .attr("y", box.y)
@@ -221,15 +221,15 @@ d3.json("../pop.json", function(nations) {
 
   // After the transition finishes, you can mouseover to change the year.
   function enableInteraction() {
-    var yearScale = d3.scale.linear()
+    /*var yearScale = d3.scale.linear()
         .domain([1950, 2011])
         .range([box.x + 10, box.x + box.width - 10])
-        .clamp(true);
+        .clamp(true);*/
 
     // Cancel the current transition, if any.
     svg.transition().duration(0);
 
-    overlay
+   /* overlay
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
         .on("mousemove", mousemove)
@@ -245,7 +245,7 @@ d3.json("../pop.json", function(nations) {
 
     function mousemove() {
       displayYear(yearScale.invert(d3.mouse(this)[0]));
-    }
+    }*/
 
     /*next.on("click",nextyear);
     function nextyear(){
@@ -296,14 +296,14 @@ function showevent(glyear) {
 					.ticks(5)
 					.scale(heightscale);
 
-		var canvas = d3.select("body")
+		/*var canvas = d3.select("body")
 		  				.append("svg")
 		  				.attr("width", canvaswidth)
 						.attr("height", canvasheight)
-						.append("g");
+						.append("g");*/
 						//.attr("transform", "translate(200,200)");
 
-	    var barChart = canvas.selectAll("rect")
+	    /*var barChart = canvas.selectAll("rect")
 						.data(dataArray)
 						.enter()
 							.append("rect")
@@ -311,7 +311,7 @@ function showevent(glyear) {
 							.attr("width", 10)
 							.attr("fill", function(d){ return colorscale(d) })
 							.attr("x", function(d,i) {return i*50} )
-							.attr("y", 100 );
+							.attr("y", 100 );*/
 		/*canvas.append("g")
 				.attr("transform", "translate(0,200)")
 				.call(axis);*/
@@ -322,7 +322,7 @@ function showevent(glyear) {
   function displayYear(year) {
     glyear = Math.round(year);
     dot.data(interpolateData(year), key).call(position).sort(order);
-    label.text(Math.round(year));
+    /*label.text(Math.round(year));*/
     $( "#slider" ).slider( "value", glyear )
     $('#main_year').empty().append(glyear)
 	//display events code start
