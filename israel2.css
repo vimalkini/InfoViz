@@ -185,12 +185,7 @@ option {
 }
 
 .checkboxes {
-  margin: 0px;
-  float: left;
-  display: inline-block;
-}
-
-.checkboxes {
+  margin: 0px; 
   display: inline-block;
   float: left;
 }
