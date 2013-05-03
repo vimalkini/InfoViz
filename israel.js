@@ -1,10 +1,7 @@
-
-var events = {};
+var events = [];
 $(document).ready(function() {
-	$.getJSON('http://people.ischool.berkeley.edu/~vimalkini/Infoviz/events.json', function(json) {
-		$.each(json, function(key, val) {
-		    events[key] = val;
-		  });
+	$.getJSON('../events.json', function(json) {
+		events = json;
 	})
 });
 
@@ -276,19 +273,65 @@ d3.json("../pop.json", function(nations) {
 function showevent(glyear) {
 		year = glyear;
 		$("#eventdiv").html('')
-		if((null != events[year]) ){
-			$("#eventdiv").append('<b>' + year + ' <b>');
-			allevents = events[year];
-			yearsummary = allevents['summary']
-			$("#eventdiv").append(yearsummary);
-			delete allevents['summary'];
-			for (var key in allevents) {
-				$("#eventdiv").append('<br>' + '<b>' + key + ': </b>' + allevents[key]);
+		for (i=0; i<events.length; i++){
+			if (events[i]['Year'] == year.toString()){
+				eventssummary = events[i];
+				$("#eventdiv").append(eventssummary['Year']);
+				if (null != eventssummary['Summary'])
+					$("#eventdiv").append(eventssummary['Summary']);
+				if (null != eventssummary['Jan']){
+					$("#eventdiv").append('<br> Jan');					
+					$("#eventdiv").append(eventssummary['Jan']);					
+				}
+				if (null != eventssummary['Feb']){
+					$("#eventdiv").append('<br> Feb');					
+					$("#eventdiv").append(eventssummary['Feb']);
+				}
+				if (null != eventssummary['Mar']){
+					$("#eventdiv").append('<br> Mar');			
+					$("#eventdiv").append(eventssummary['Mar']);					
+				}
+				if (null != eventssummary['Apr']){
+					$("#eventdiv").append('<br> Apr');	
+					$("#eventdiv").append(eventssummary['Apr']);
+				}
+				if (null != eventssummary['May']){
+					$("#eventdiv").append('<br> May');	
+					$("#eventdiv").append(eventssummary['May']);
+				}
+				if (null != eventssummary['Jun']){
+					$("#eventdiv").append('<br> Jun');	
+					$("#eventdiv").append(eventssummary['Jun']);
+				}
+				if (null != eventssummary['Jul']){
+					$("#eventdiv").append('<br> Jul');	
+					$("#eventdiv").append(eventssummary['Jul']);
+				}
+				if (null != eventssummary['Aug']){
+					$("#eventdiv").append('<br> Aug');	
+					$("#eventdiv").append(eventssummary['Aug']);
+				}
+				if (null != eventssummary['Sep']){
+					$("#eventdiv").append('<br> Sep');	
+					$("#eventdiv").append(eventssummary['Sep']);
+				}
+				if (null != eventssummary['Oct']){
+					$("#eventdiv").append('<br> Oct');	
+					$("#eventdiv").append(eventssummary['Oct']);
+				}
+				if (null != eventssummary['Nov']){
+					$("#eventdiv").append('<br> Nov');	
+					$("#eventdiv").append(eventssummary['Nov']);
+				}
+				if (null != eventssummary['Dec']){
+					$("#eventdiv").append('<br> Dec');	
+					$("#eventdiv").append(eventssummary['Dec']);
+				}
+				break;
 			}
-
 		}
-
 	}
+
 
   // Updates the display to show the specified year.
   function displayYear(year) {
@@ -300,9 +343,6 @@ function showevent(glyear) {
 	//display events code start
 	showevent(glyear)
 	//display events code start
-	//display casualties code start
-	showcasualtieschart(glyear);
-	//display casualties code start
   }
 
   // Interpolates the dataset for the given (fractional) year.
