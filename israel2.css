@@ -58,7 +58,7 @@ h2 {
   font-family: 'Josefin Slab'; 
   font-size: 1.6em;
   font-style:normal;
-  color: white;
+  color: #666666;
   vertical-align: bottom;
   margin: 0px;
 }
@@ -301,7 +301,7 @@ input[type=checkbox]:checked + label:before {
   width: 50px;
   font-size: 5.5em;
   font-family: "Josefin Slab";
-  color: white;
+  color: #666666;
 }
 
 /*map style*/
@@ -391,21 +391,21 @@ input[type=checkbox]:checked + label:before {
 
 .axis path, .axis line {
   fill: none;
-  stroke: #777;
+  stroke: #CCC;
   shape-rendering: crispEdges;
 }
 
 .label {
-  fill: #777;
+  fill: #CCC;
 }
-
+/*
 .year.label {
   font: 500 196px "Helvetica Neue";
   fill: #ddd;
-}
+}*/
 
 .year.label.active {
-  fill: #aaa;
+  fill: #CCC;
 }
 
 .overlay {
