@@ -287,41 +287,101 @@ function showevent(glyear) {
 				eventssummary = events[i];
 				if (null != eventssummary['Summary'])
 					$("#eventdiv").append(eventssummary['Summary']);
-				if (null != eventssummary['Jan']){					
-					$("#eventdiv").append('<br><br>' + eventssummary['Jan']);					
+				if (null != eventssummary['Jan']){				
+					var patt = new RegExp ('January \\d+\\/?');
+					monthmatch = eventssummary['Jan'].match(patt);
+					eventmonth = eventssummary['Jan'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);					
 				}
 				if (null != eventssummary['Feb']){				
-					$("#eventdiv").append('<br><br>' + eventssummary['Feb']);
+					var patt = new RegExp ('February \\d+\\/?');
+					monthmatch = eventssummary['Feb'].match(patt);
+					eventmonth = eventssummary['Feb'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
-				if (null != eventssummary['Mar']){			
-					$("#eventdiv").append('<br><br>' + eventssummary['Mar']);					
+				if (null != eventssummary['Mar']){	
+					var patt = new RegExp ('March \\d+\\/?');
+					monthmatch = eventssummary['Mar'].match(patt);
+					eventmonth = eventssummary['Mar'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);					
 				}
 				if (null != eventssummary['Apr']){	
-					$("#eventdiv").append('<br><br>' + eventssummary['Apr']);
+					var patt = new RegExp ('April \\d+\\/?');
+					monthmatch = eventssummary['Apr'].match(patt);
+					eventmonth = eventssummary['Apr'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['May']){	
-					$("#eventdiv").append('<br><br>' + eventssummary['May']);
+					var patt = new RegExp ('May \\d+\\/?');
+					monthmatch = eventssummary['May'].match(patt);
+					eventmonth = eventssummary['May'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Jun']){	
-					$("#eventdiv").append('<br><br>' + eventssummary['Jun']);
+					var patt = new RegExp ('June \\d+\\/?');
+					monthmatch = eventssummary['Jun'].match(patt);
+					eventmonth = eventssummary['Jun'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Jul']){
-					$("#eventdiv").append('<br><br>' + eventssummary['Jul']);
+					var patt = new RegExp ('July \\d+\\/?');
+					monthmatch = eventssummary['Jul'].match(patt);
+					eventmonth = eventssummary['Jul'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Aug']){
-					$("#eventdiv").append('<br><br>' + eventssummary['Aug']);
+					var patt = new RegExp ('August \\d+\\/?');
+					monthmatch = eventssummary['Aug'].match(patt);
+					eventmonth = eventssummary['Aug'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Sep']){
-					$("#eventdiv").append('<br><br>' + eventssummary['Sep']);
+					var patt = new RegExp ('September \\d+\\/?');
+					monthmatch = eventssummary['Sep'].match(patt);
+					eventmonth = eventssummary['Sep'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Oct']){	
-					$("#eventdiv").append('<br><br>' + eventssummary['Oct']);
+					var patt = new RegExp ('October \\d+\\/?');
+					monthmatch = eventssummary['Oct'].match(patt);
+					eventmonth = eventssummary['Oct'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Nov']){
-					$("#eventdiv").append('<br><br>' + eventssummary['Nov']);
+					var patt = new RegExp ('November \\d+\\/?');
+					monthmatch = eventssummary['Nov'].match(patt);
+					eventmonth = eventssummary['Nov'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Dec']){	
-					$("#eventdiv").append('<br><br>' + eventssummary['Dec']);
+					var patt = new RegExp ('December \\d+\\/?');
+					monthmatch = eventssummary['Dec'].match(patt);
+					eventmonth = eventssummary['Dec'];
+					if (null != monthmatch)
+						eventmonth = eventmonth.replace(patt,"<b>"+monthmatch[0]+"</b>");
+					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				break;
 			}
