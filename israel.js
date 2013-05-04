@@ -142,9 +142,89 @@ d3.json("../pop.json", function(nations) {
   $('.check_region').change(function(){
     enableInteraction();
     glyear = $( "#slider" ).slider( "value" );
-    displayYear($( "#slider" ).slider( "value" ))
+    displayYear($( "#slider" ).slider( "value" ));
+    /*if ($('#check_benjamin').is(':checked'))
+      {$('#Benjamin').attr('opacity',0.8)}
+    else
+      {$('#Benjamin').attr('opacity',0.1);
+    }
+    if ($('#check_gaza').is(':checked'))
+      {$('#Gaza').attr('opacity',0.8)}
+    else
+      {$('#Gaza').attr('opacity',0.1)}*/
+    /*if ($('#check_mount').is(':checked'))
+      {$('#Mount_Hebron').attr('opacity',0.8)}
+    else
+      {$('#Mount_Hebron').attr('opacity',0.1)}
+    if ($('#check_megilot').is(':checked'))
+      {$('#Megilot').attr('opacity',0.8)}
+    else
+      {$('#Megilot').attr('opacity',0.1)}*/
+    /*if ($('#check_samaria').is(':checked'))
+      {$('#Samaria').attr('opacity',0.8)}
+    else
+      {$('#Samaria').attr('opacity',0.1);
+    }*/
+   /* if ($('#check_jordan').is(':checked'))
+      {$('#Jordan_x5F_Valley').attr('opacity',0.8)}
+    else
+      {$('#Jordan_x5F_Valley').attr('opacity',0.1);
+    }
+    if ($('#check_etzion').is(':checked'))
+      {$('#Etzion_x5F_Bloc').attr('opacity',0.8)}
+    else
+      {$('#Etzion_x5F_Bloc').attr('opacity',0.1);
+    }*/
   });
-
+  $('#check_benjamin').change(function(){
+    if ($('#check_benjamin').is(':checked'))
+      {$('#p_Benjamin').attr('fill-opacity',0.8)}
+    else
+      {$('#p_Benjamin').attr('fill-opacity',0.1);
+    }
+  });
+  $('#check_gaza').change(function(){
+    if ($('#check_gaza').is(':checked'))
+      {$('#p_Gaza').attr('fill-opacity',0.8)}
+    else
+      {$('#p_Gaza').attr('fill-opacity',0.1);
+    }
+  });
+$('#check_samaria').change(function(){
+  if ($('#check_samaria').is(':checked'))
+      {$('#p_Samaria').attr('fill-opacity',0.8)}
+    else
+      {$('#p_Samaria').attr('fill-opacity',0.1);
+    }
+  });
+$('#check_mount').change(function(){
+  if ($('#check_mount').is(':checked'))
+      {$('#p_Mount_Hebron').attr('fill-opacity',0.8)}
+    else
+      {$('#p_Mount_Hebron').attr('fill-opacity',0.1);
+    }
+  });
+$('#check_etzion').change(function(){
+  if ($('#check_etzion').is(':checked'))
+      {$('#p_Etzion_x5F_Bloc').attr('fill-opacity',0.8)}
+    else
+      {$('#p_Etzion_x5F_Bloc').attr('fill-opacity',0.1);
+    }
+  });
+$('#check_jordan').change(function(){
+  if ($('#check_jordan').is(':checked'))
+      {$('#p_Jordan_x5F_Valley').attr('fill-opacity',0.8)}
+    else
+      {$('#p_Jordan_x5F_Valley').attr('fill-opacity',0.1);
+    }
+  });
+$('#check_megilot').change(function(){
+  if ($('#check_megilot').is(':checked'))
+      {$('#p_Megilot').attr('fill-opacity',0.8)}
+    else
+      {$('#p_Megilot').attr('fill-opacity',0.1);
+    }
+  });
   /*document.getElementById("next").onclick = function(){
     if (glyear >= 2011.000)
       displayYear(2011);
@@ -176,6 +256,8 @@ d3.json("../pop.json", function(nations) {
   // Positions the dots based on data.
   var tooltip = d3.select("body")
           .append("div")
+          .style("background-color",'#ccc')
+          .style("color","#3b3b3b")
           .style("position", "absolute")
           .style("z-index", "10")
           .style("visibility", "hidden")
