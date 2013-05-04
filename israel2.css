@@ -317,11 +317,11 @@ input[type=checkbox]:checked + label:before {
 }
 
 #Gaza polygon{
-  fill: #e377c2;
+  fill: #7f7f7f;
 }
 
 #Gaza polygon:hover{
-  fill: #e98fcd;
+  fill: #7f7f7f;
 }
 
 #Etzion_x5F_Bloc path {
@@ -329,7 +329,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 #Etzion_x5F_Bloc path:hover {
-  fill: #4bae4b;
+  fill: #2ca02c;
 }
 
 #Jordan_x5F_Valley path {
@@ -337,7 +337,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 #Jordan_x5F_Valley path:hover {
-  fill: #e14b4c;
+  fill: #d62728;
 }
 
 #Samaria path {
@@ -345,7 +345,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 #Samaria path:hover {
-  fill: #fd9133;
+  fill: #ff7f0e;
 }
 
 #Benjamin path {
@@ -353,15 +353,15 @@ input[type=checkbox]:checked + label:before {
 }
 
 #Benjamin path:hover {
-  fill: #a980ce;
+  fill: #9467bd;
 }
 
 #Megilot path {
-  fill: #8c564b;
+  fill: #e377c2;
 }
 
 #Megilot path:hover {
-  fill: #996b61;
+  fill: #e377c2;
 }
 
 #Mount_x5F_Hebron path {
@@ -369,7 +369,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 #Mount_x5F_Hebron path:hover {
-  fill: #428bbe;
+  fill: #1f77b4;
 }
 
 #water polygon{
