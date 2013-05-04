@@ -86,8 +86,8 @@ d3.json("../pop.json", function(nations) {
       .attr("class", "dots")
       .selectAll(".dot")
       //not exactly sure what interpolateData does
-      .data(interpolateData(1000))
-    .enter().append("circle")
+      .data(interpolateData(1))
+      .enter().append("circle")
       // just saying that "dot" is the name of the class. for css!
       .attr("class", "dot")
       // filling dot w/ color based on region attribute of object d
@@ -124,22 +124,25 @@ d3.json("../pop.json", function(nations) {
         .text("prev")
         .on("click", enableInteraction);*/
 
-  d3.select('#changer')
+  /*d3.select('#changer')
     .on("change", changer);
 
   function changer(){
     rregion = this.options[this.selectedIndex].value;
     displayYear(glyear);
-  }
+  }*/
 
   $( "#slider" ).on( "slide", function( event, ui ) {
     enableInteraction();
-    displayYear($( "#slider" ).slider( "value" ));
+    glyear = ui.value;
+    displayYear(glyear);
   } );
+  
 
   $('.check_region').change(function(){
     enableInteraction();
-    displayYear(glyear)
+    glyear = $( "#slider" ).slider( "value" );
+    displayYear($( "#slider" ).slider( "value" ))
   });
 
   /*document.getElementById("next").onclick = function(){
@@ -219,6 +222,11 @@ d3.json("../pop.json", function(nations) {
             }*/
             
           }
+          if (status == 'visible')
+          {
+            if (y(d) <= 10)
+              status = 'hidden'
+          }
         return status;
       });
   }
@@ -266,7 +274,8 @@ d3.json("../pop.json", function(nations) {
   // Tweens the entire chart by first tweening the year, and then the data.
   // For the interpolated data, the dots and label are redrawn.
   function tweenYear() {
-    var year = d3.interpolateNumber(1950, 2011);
+    var year = d3.interpolateRound(1950, 2011);
+    var glyear = year;
     return function(t) { displayYear(year(t)); };
   }
 
@@ -335,6 +344,7 @@ function showevent(glyear) {
 
   // Updates the display to show the specified year.
   function displayYear(year) {
+    /*console.log(year);*/
     glyear = Math.round(year);
     dot.data(interpolateData(year), key).call(position).sort(order);
     /*label.text(Math.round(year));*/
@@ -342,7 +352,6 @@ function showevent(glyear) {
     $('#main_year').empty().append(glyear)
 	//display events code start
 	showevent(glyear)
-	//display events code start
   }
 
   // Interpolates the dataset for the given (fractional) year.

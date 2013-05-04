@@ -8,10 +8,20 @@
         type="text/javascript"></script>
      <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
      <script>
-     $(function() {
-    $( "#slider" ).slider({ min: 1950 ,max: 2011 });
+     /*$(function() {
+    $( "#slider" ).slider({ min: 1950 ,max: 2011 }).slider( "option", "step", 1 );
   });
-      var value = $( "#slider" ).slider( "option", "value" );
+      var value = $( "#slider" ).slider( "option", "value" );*/
+     
+     $(function() {
+    var value = 0;
+    $( "#slider" ).slider({
+      min: 1950,
+      max: 2011,
+      step: 1
+
+    });
+  });
      </script>
   </head>
   <body>
