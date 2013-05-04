@@ -212,7 +212,11 @@ label:before {
     left: 0;  
     bottombottom: 1px;  
     background-color: white;  
-}  
+} 
+
+label: #check_gaza {
+  background-color: #e377c2;
+} 
 
 /*.radio label:before {  
     border-radius: 8px;  
@@ -314,66 +318,59 @@ input[type=checkbox]:checked + label:before {
 
 #Gaza polygon{
   fill: #e377c2;
-  opacity: 0.8;
 }
 
-/*#Gaza polygon:hover{
+#Gaza polygon:hover{
   fill: #e98fcd;
 }
-*/
+
 #Etzion_x5F_Bloc path {
   fill: #2ca02c;
-  opacity: 0.8;
 }
 
-/*#Etzion_x5F_Bloc path:hover {
+#Etzion_x5F_Bloc path:hover {
   fill: #4bae4b;
-}*/
+}
 
 #Jordan_x5F_Valley path {
   fill: #d62728;
-  opacity: 0.8;
 }
 
-/*#Jordan_x5F_Valley path:hover {
+#Jordan_x5F_Valley path:hover {
   fill: #e14b4c;
-}*/
+}
 
 #Samaria path {
   fill: #ff7f0e;
-  opacity: 0.8;
 }
 
-/*#Samaria path:hover {
+#Samaria path:hover {
   fill: #fd9133;
 }
-*/
-#Benjamin path{
+
+#Benjamin path {
   fill: #9467bd;
-  opacity: 0.8;
 }
 
-/*#Benjamin path:hover {
+#Benjamin path:hover {
   fill: #a980ce;
-}*/
+}
 
 #Megilot path {
   fill: #8c564b;
-  opacity: 0.8;
 }
 
-/*#Megilot path:hover {
+#Megilot path:hover {
   fill: #996b61;
 }
-*/
-#Mount_Hebron path {
+
+#Mount_x5F_Hebron path {
   fill: #1f77b4;
-  opacity: 0.8;
 }
 
-/*#Mount_Hebron path:hover {
+#Mount_x5F_Hebron path:hover {
   fill: #428bbe;
-}*/
+}
 
 #water polygon{
   fill: #DDDDDD;
