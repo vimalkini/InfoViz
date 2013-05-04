@@ -5,10 +5,6 @@
 
 /*starting main page css */
 
-/** {
-  outline: 1px dashed;
-}*/
-
 @font-face {
     font-family: 'Josefin Slab';
     src: url('fonts/JosefinSlab-Regular-webfont.eot');
@@ -40,8 +36,8 @@ body {
   font-family: 'Josefin Slab';
   font-size: 1em;
   /*width: 100%;*/
-  overflow: hidden;
-}
+/*  overflow: hidden;
+*/}
 
 p {
   font-family: 'Josefin Slab';
@@ -385,16 +381,17 @@ input[type=checkbox]:checked + label:before {
 }
 
 #text {
-  font: 10px "Josefin Slab";
+  font: 8px "Josefin Slab";
 }
 
 .dot {
-  stroke: #000;
+  stroke: none;
+  opacity: .8;
 }
 
 .axis path, .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #777;
   shape-rendering: crispEdges;
 }
 
