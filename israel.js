@@ -285,62 +285,49 @@ function showevent(glyear) {
 		for (i=0; i<events.length; i++){
 			if (events[i]['Year'] == year.toString()){
 				eventssummary = events[i];
-				$("#eventdiv").append(eventssummary['Year']);
+				$("#eventdiv").append('<b>' + eventssummary['Year'] + ' <b>');
 				if (null != eventssummary['Summary'])
 					$("#eventdiv").append(eventssummary['Summary']);
-				if (null != eventssummary['Jan']){
-					$("#eventdiv").append('<br> Jan');					
-					$("#eventdiv").append(eventssummary['Jan']);					
+				if (null != eventssummary['Jan']){					
+					$("#eventdiv").append('<br>' + eventssummary['Jan']);					
 				}
-				if (null != eventssummary['Feb']){
-					$("#eventdiv").append('<br> Feb');					
-					$("#eventdiv").append(eventssummary['Feb']);
+				if (null != eventssummary['Feb']){				
+					$("#eventdiv").append('<br>' + eventssummary['Feb']);
 				}
-				if (null != eventssummary['Mar']){
-					$("#eventdiv").append('<br> Mar');			
-					$("#eventdiv").append(eventssummary['Mar']);					
+				if (null != eventssummary['Mar']){			
+					$("#eventdiv").append('<br>' + eventssummary['Mar']);					
 				}
-				if (null != eventssummary['Apr']){
-					$("#eventdiv").append('<br> Apr');	
-					$("#eventdiv").append(eventssummary['Apr']);
+				if (null != eventssummary['Apr']){	
+					$("#eventdiv").append('<br>' + eventssummary['Apr']);
 				}
-				if (null != eventssummary['May']){
-					$("#eventdiv").append('<br> May');	
-					$("#eventdiv").append(eventssummary['May']);
+				if (null != eventssummary['May']){	
+					$("#eventdiv").append('<br>' + eventssummary['May']);
 				}
-				if (null != eventssummary['Jun']){
-					$("#eventdiv").append('<br> Jun');	
-					$("#eventdiv").append(eventssummary['Jun']);
+				if (null != eventssummary['Jun']){	
+					$("#eventdiv").append('<br>' + eventssummary['Jun']);
 				}
 				if (null != eventssummary['Jul']){
-					$("#eventdiv").append('<br> Jul');	
-					$("#eventdiv").append(eventssummary['Jul']);
+					$("#eventdiv").append('<br>' + eventssummary['Jul']);
 				}
 				if (null != eventssummary['Aug']){
-					$("#eventdiv").append('<br> Aug');	
-					$("#eventdiv").append(eventssummary['Aug']);
+					$("#eventdiv").append('<br>' + eventssummary['Aug']);
 				}
 				if (null != eventssummary['Sep']){
-					$("#eventdiv").append('<br> Sep');	
-					$("#eventdiv").append(eventssummary['Sep']);
+					$("#eventdiv").append('<br>' + eventssummary['Sep']);
 				}
-				if (null != eventssummary['Oct']){
-					$("#eventdiv").append('<br> Oct');	
-					$("#eventdiv").append(eventssummary['Oct']);
+				if (null != eventssummary['Oct']){	
+					$("#eventdiv").append('<br>' + eventssummary['Oct']);
 				}
 				if (null != eventssummary['Nov']){
-					$("#eventdiv").append('<br> Nov');	
-					$("#eventdiv").append(eventssummary['Nov']);
+					$("#eventdiv").append('<br>' + eventssummary['Nov']);
 				}
-				if (null != eventssummary['Dec']){
-					$("#eventdiv").append('<br> Dec');	
-					$("#eventdiv").append(eventssummary['Dec']);
+				if (null != eventssummary['Dec']){	
+					$("#eventdiv").append('<br>' + eventssummary['Dec']);
 				}
 				break;
 			}
 		}
 	}
-
 
   // Updates the display to show the specified year.
   function displayYear(year) {
