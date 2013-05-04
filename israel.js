@@ -285,44 +285,43 @@ function showevent(glyear) {
 		for (i=0; i<events.length; i++){
 			if (events[i]['Year'] == year.toString()){
 				eventssummary = events[i];
-				$("#eventdiv").append('<b>' + eventssummary['Year'] + ' <b>');
 				if (null != eventssummary['Summary'])
 					$("#eventdiv").append(eventssummary['Summary']);
 				if (null != eventssummary['Jan']){					
-					$("#eventdiv").append('<br>' + eventssummary['Jan']);					
+					$("#eventdiv").append('<br><br>' + eventssummary['Jan']);					
 				}
 				if (null != eventssummary['Feb']){				
-					$("#eventdiv").append('<br>' + eventssummary['Feb']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Feb']);
 				}
 				if (null != eventssummary['Mar']){			
-					$("#eventdiv").append('<br>' + eventssummary['Mar']);					
+					$("#eventdiv").append('<br><br>' + eventssummary['Mar']);					
 				}
 				if (null != eventssummary['Apr']){	
-					$("#eventdiv").append('<br>' + eventssummary['Apr']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Apr']);
 				}
 				if (null != eventssummary['May']){	
-					$("#eventdiv").append('<br>' + eventssummary['May']);
+					$("#eventdiv").append('<br><br>' + eventssummary['May']);
 				}
 				if (null != eventssummary['Jun']){	
-					$("#eventdiv").append('<br>' + eventssummary['Jun']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Jun']);
 				}
 				if (null != eventssummary['Jul']){
-					$("#eventdiv").append('<br>' + eventssummary['Jul']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Jul']);
 				}
 				if (null != eventssummary['Aug']){
-					$("#eventdiv").append('<br>' + eventssummary['Aug']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Aug']);
 				}
 				if (null != eventssummary['Sep']){
-					$("#eventdiv").append('<br>' + eventssummary['Sep']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Sep']);
 				}
 				if (null != eventssummary['Oct']){	
-					$("#eventdiv").append('<br>' + eventssummary['Oct']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Oct']);
 				}
 				if (null != eventssummary['Nov']){
-					$("#eventdiv").append('<br>' + eventssummary['Nov']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Nov']);
 				}
 				if (null != eventssummary['Dec']){	
-					$("#eventdiv").append('<br>' + eventssummary['Dec']);
+					$("#eventdiv").append('<br><br>' + eventssummary['Dec']);
 				}
 				break;
 			}
