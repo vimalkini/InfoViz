@@ -33,20 +33,21 @@ var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d
 
 // Create the SVG container and set the origin.
 var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width + 30 + margin.left + margin.right)
+    .attr("height", height +5 + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Add the x-axis. Width of chart
 svg.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate("+22+"," + height + ")")
     .call(xAxis);
 
 // Add the y-axis. Height of chart
 svg.append("g")
     .attr("class", "y axis")
+	.attr("transform", "translate(" + 22 + ",0)")
     .call(yAxis);
 
 // Add an x-axis label.
@@ -61,10 +62,18 @@ svg.append("g")
 svg.append("text")
     .attr("class", "y label")
     .attr("text-anchor", "end")
-    .attr("y", 6)
+    .attr("y", 25)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
-    .text("Region");
+    .text("Population");
+
+svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", 6)
+    .attr("dx", width - 10)
+	.attr("dy", height - 10)
+    .text("Year of Establishment");
 
 // Add the year label; the value is set on transition. The big date.
 
@@ -93,6 +102,7 @@ d3.json("../pop.json", function(nations) {
       // filling dot w/ color based on region attribute of object d
       .style("fill", function(d) { return colorScale(color(d)); })
       .call(position)
+      .attr("transform", "translate("+22+"," + 0 + ")")
       .sort(order);
   // Add a title.
   /*dot.append("title")
@@ -279,7 +289,7 @@ $('#check_megilot').change(function(){
         .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
          .style("visibility", function(d) {
         var status;
-        if (glyear > x(d))
+        if (glyear >= x(d))
           {status = 'visible';}
         else
           {status ='hidden';}
