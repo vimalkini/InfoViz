@@ -214,8 +214,32 @@ label:before {
     background-color: white;  
 } 
 
-label: #check_gaza {
-  background-color: #e377c2;
+#gaza_type {
+  color: #7f7f7f;
+}
+
+#sam_type {
+  color: #d62728;
+}
+
+#benjamin_type {
+  color: #9467bd;
+}
+
+#etzion_type {
+  color: #2ca02c;
+} 
+
+#jordan_type {
+  color: #d62728;
+} 
+
+#mount_type {
+  color: #1f77b4;
+} 
+
+#megilot_type {
+  color: #e377c2;
 } 
 
 /*.radio label:before {  
