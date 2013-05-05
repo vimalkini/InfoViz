@@ -58,7 +58,7 @@ h2 {
   font-family: 'Josefin Slab'; 
   font-size: 1.6em;
   font-style:normal;
-  color: white;
+  color: #666666;
   vertical-align: bottom;
   margin: 0px;
 }
@@ -212,7 +212,11 @@ label:before {
     left: 0;  
     bottombottom: 1px;  
     background-color: white;  
-}  
+} 
+
+label: #check_gaza {
+  background-color: #e377c2;
+} 
 
 /*.radio label:before {  
     border-radius: 8px;  
@@ -301,7 +305,7 @@ input[type=checkbox]:checked + label:before {
   width: 50px;
   font-size: 5.5em;
   font-family: "Josefin Slab";
-  color: white;
+  color: #666666;
 }
 
 /*map style*/
@@ -313,67 +317,60 @@ input[type=checkbox]:checked + label:before {
 }
 
 #Gaza polygon{
-  fill: #e377c2;
-  opacity: 0.8;
+  fill: #7f7f7f;
 }
 
-/*#Gaza polygon:hover{
-  fill: #e98fcd;
+#Gaza polygon:hover{
+  fill: #7f7f7f;
 }
-*/
+
 #Etzion_x5F_Bloc path {
   fill: #2ca02c;
-  opacity: 0.8;
 }
 
-/*#Etzion_x5F_Bloc path:hover {
-  fill: #4bae4b;
-}*/
+#Etzion_x5F_Bloc path:hover {
+  fill: #2ca02c;
+}
 
 #Jordan_x5F_Valley path {
   fill: #d62728;
-  opacity: 0.8;
 }
 
-/*#Jordan_x5F_Valley path:hover {
-  fill: #e14b4c;
-}*/
+#Jordan_x5F_Valley path:hover {
+  fill: #d62728;
+}
 
 #Samaria path {
   fill: #ff7f0e;
-  opacity: 0.8;
 }
 
-/*#Samaria path:hover {
-  fill: #fd9133;
+#Samaria path:hover {
+  fill: #ff7f0e;
 }
-*/
-#Benjamin path{
+
+#Benjamin path {
   fill: #9467bd;
-  opacity: 0.8;
 }
 
-/*#Benjamin path:hover {
-  fill: #a980ce;
-}*/
+#Benjamin path:hover {
+  fill: #9467bd;
+}
 
 #Megilot path {
-  fill: #8c564b;
-  opacity: 0.8;
+  fill: #e377c2;
 }
 
-/*#Megilot path:hover {
-  fill: #996b61;
+#Megilot path:hover {
+  fill: #e377c2;
 }
-*/
-#Mount_Hebron path {
+
+#Mount_x5F_Hebron path {
   fill: #1f77b4;
-  opacity: 0.8;
 }
 
-/*#Mount_Hebron path:hover {
-  fill: #428bbe;
-}*/
+#Mount_x5F_Hebron path:hover {
+  fill: #1f77b4;
+}
 
 #water polygon{
   fill: #DDDDDD;
@@ -398,21 +395,21 @@ input[type=checkbox]:checked + label:before {
 
 .axis path, .axis line {
   fill: none;
-  stroke: #777;
+  stroke: #CCC;
   shape-rendering: crispEdges;
 }
 
 .label {
-  fill: #777;
+  fill: #CCC;
 }
-
+/*
 .year.label {
   font: 500 196px "Helvetica Neue";
   fill: #ddd;
-}
+}*/
 
 .year.label.active {
-  fill: #aaa;
+  fill: #CCC;
 }
 
 .overlay {
