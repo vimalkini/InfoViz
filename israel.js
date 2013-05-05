@@ -25,10 +25,13 @@ var xScale = d3.scale.linear().domain([1965, 2000]).range([0, width]),
     colorScale = d3.scale.category10();
 
 // The x & y axes.
-var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d")),
+//var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format("d")),
     //yAxis = d3.svg.axis().scale(yScale).orient("left");
+	xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickFormat(function (d) {
+	        return d
+	});
 	yAxis = d3.svg.axis().scale(yScale).orient("left").tickFormat(function (d) {
-	        return yScale.tickFormat(4,d3.format(",d"))(d)
+	        return yScale.tickFormat(4,d3.format("d"))(d)
 	});
 
 // Create the SVG container and set the origin.
@@ -380,7 +383,7 @@ function showevent(glyear) {
 				if (null != eventssummary['Summary'])
 					$("#eventdiv").append(eventssummary['Summary']);
 				if (null != eventssummary['Jan']){				
-					var patt = new RegExp ('January \\d+\\/?');
+					var patt = new RegExp ('January|January \\d+\\/?');
 					monthmatch = eventssummary['Jan'].match(patt);
 					eventmonth = eventssummary['Jan'];
 					if (null != monthmatch)
@@ -388,7 +391,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);					
 				}
 				if (null != eventssummary['Feb']){				
-					var patt = new RegExp ('February \\d+\\/?');
+					var patt = new RegExp ('February|February \\d+\\/?');
 					monthmatch = eventssummary['Feb'].match(patt);
 					eventmonth = eventssummary['Feb'];
 					if (null != monthmatch)
@@ -396,7 +399,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Mar']){	
-					var patt = new RegExp ('March \\d+\\/?');
+					var patt = new RegExp ('March|March \\d+\\/?');
 					monthmatch = eventssummary['Mar'].match(patt);
 					eventmonth = eventssummary['Mar'];
 					if (null != monthmatch)
@@ -404,7 +407,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);					
 				}
 				if (null != eventssummary['Apr']){	
-					var patt = new RegExp ('April \\d+\\/?');
+					var patt = new RegExp ('April|April \\d+\\/?');
 					monthmatch = eventssummary['Apr'].match(patt);
 					eventmonth = eventssummary['Apr'];
 					if (null != monthmatch)
@@ -412,7 +415,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['May']){	
-					var patt = new RegExp ('May \\d+\\/?');
+					var patt = new RegExp ('May|May \\d+\\/?');
 					monthmatch = eventssummary['May'].match(patt);
 					eventmonth = eventssummary['May'];
 					if (null != monthmatch)
@@ -420,7 +423,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Jun']){	
-					var patt = new RegExp ('June \\d+\\/?');
+					var patt = new RegExp ('June|June \\d+\\/?');
 					monthmatch = eventssummary['Jun'].match(patt);
 					eventmonth = eventssummary['Jun'];
 					if (null != monthmatch)
@@ -428,7 +431,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Jul']){
-					var patt = new RegExp ('July \\d+\\/?');
+					var patt = new RegExp ('July|July \\d+\\/?');
 					monthmatch = eventssummary['Jul'].match(patt);
 					eventmonth = eventssummary['Jul'];
 					if (null != monthmatch)
@@ -436,7 +439,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Aug']){
-					var patt = new RegExp ('August \\d+\\/?');
+					var patt = new RegExp ('August|August \\d+\\/?');
 					monthmatch = eventssummary['Aug'].match(patt);
 					eventmonth = eventssummary['Aug'];
 					if (null != monthmatch)
@@ -444,7 +447,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Sep']){
-					var patt = new RegExp ('September \\d+\\/?');
+					var patt = new RegExp ('September|September \\d+\\/?');
 					monthmatch = eventssummary['Sep'].match(patt);
 					eventmonth = eventssummary['Sep'];
 					if (null != monthmatch)
@@ -452,7 +455,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Oct']){	
-					var patt = new RegExp ('October \\d+\\/?');
+					var patt = new RegExp ('October|October \\d+\\/?');
 					monthmatch = eventssummary['Oct'].match(patt);
 					eventmonth = eventssummary['Oct'];
 					if (null != monthmatch)
@@ -460,7 +463,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Nov']){
-					var patt = new RegExp ('November \\d+\\/?');
+					var patt = new RegExp ('November|November \\d+\\/?');
 					monthmatch = eventssummary['Nov'].match(patt);
 					eventmonth = eventssummary['Nov'];
 					if (null != monthmatch)
@@ -468,7 +471,7 @@ function showevent(glyear) {
 					$("#eventdiv").append('<br><br>' + eventmonth);
 				}
 				if (null != eventssummary['Dec']){	
-					var patt = new RegExp ('December \\d+\\/?');
+					var patt = new RegExp ('December|December \\d+\\/?');
 					monthmatch = eventssummary['Dec'].match(patt);
 					eventmonth = eventssummary['Dec'];
 					if (null != monthmatch)
