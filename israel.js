@@ -1,6 +1,6 @@
 var events = [];
 $(document).ready(function() {
-	$.getJSON('../events.json', function(json) {
+	$.getJSON('events.json', function(json) {
 		events = json;
 	})
 });
@@ -12,6 +12,13 @@ function radius(d) { return d.population; }
 function color(d) { return d.region; }
 function key(d) { return d.name; }
 
+var gaza = 0;
+var samaria = 0;
+var benjamin = 0;
+var etzion = 0;
+var jordan =0;
+var mount = 0;
+var megilot = 0;
 var glyear = 1950;
 // Chart dimensions.
 var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
@@ -94,6 +101,8 @@ d3.json("../pop.json", function(nations) {
   var bisect = d3.bisector(function(d) { return d[0]; });
 
   // Add a dot per year.
+  
+
   var dot = svg.append("g")
       .attr("class", "dots")
       .selectAll(".dot")
@@ -107,6 +116,7 @@ d3.json("../pop.json", function(nations) {
       .call(position)
       .attr("transform", "translate("+22+"," + 0 + ")")
       .sort(order);
+
   // Add a title.
   /*dot.append("title")
       .text(function(d) { return d.name; });*/
@@ -292,6 +302,26 @@ $('#check_megilot').change(function(){
         .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
          .style("visibility", function(d) {
         var status;
+        /*console.log(glyear);
+        if (glyear.toString() == '1999')
+          console.log(agg[glyear.toString()]);*/
+        if ((glyear >= x(d)))
+          {
+            if (d.region.toLowerCase() == 'gaza')
+              {gaza = gaza + y(d)}
+            if (d.region.toLowerCase() == 'samaria')
+              {samaria = samaria + y(d)}
+            if (d.region.toLowerCase() == 'benjamin')
+              {benjamin = benjamin + y(d)}
+            if (d.region.toLowerCase() == 'etzion bloc')
+              {etzion = etzion + y(d)}
+            if (d.region.toLowerCase() == 'jordan valley')
+              {jordan = jordan + y(d)}
+            if (d.region.toLowerCase() == 'mount hebron')
+              {mount = mount + y(d)}
+            if (d.region.toLowerCase() == 'megilot')
+              {megilot = megilot + y(d)}
+          }
         if (glyear >= x(d))
           {status = 'visible';}
         else
@@ -486,11 +516,19 @@ function showevent(glyear) {
   // Updates the display to show the specified year.
   function displayYear(year) {
     /*console.log(year);*/
+    gaza = 0;
     glyear = Math.round(year);
     dot.data(interpolateData(year), key).call(position).sort(order);
     /*label.text(Math.round(year));*/
     $( "#slider" ).slider( "value", glyear )
     $('#main_year').empty().append(glyear)
+    $('#t_gaza').empty().append(Math.round(gaza));
+    $('#t_samaria').empty().append(Math.round(samaria));
+    $('#t_benjamin').empty().append(Math.round(benjamin));
+    $('#t_etzion').empty().append(Math.round(etzion));
+    $('#t_jordan').empty().append(Math.round(jordan));
+    $('#t_mount').empty().append(Math.round(mount));
+    $('#t_megilot').empty().append(Math.round(megilot));
 	//display events code start
 	showevent(glyear)
   }
