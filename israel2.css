@@ -35,9 +35,8 @@ body {
   color: #4F5051;
   font-family: 'Josefin Slab';
   font-size: 1em;
-  /*width: 100%;*/
-/*  overflow: hidden;
-*/}
+  width: 1024px;
+}
 
 p {
   font-family: 'Josefin Slab';
@@ -56,7 +55,7 @@ h1 {
 
 h2 {
   font-family: 'Josefin Slab'; 
-  font-size: 1.6em;
+  font-size: 1.3em;
   font-style:normal;
   color: #666666;
   vertical-align: bottom;
@@ -66,7 +65,7 @@ h2 {
 h3 {
   font-family: 'OpenSansCondensedLight';
   font-style: normal;
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin:0px;
   /*margin: .3em .3em .3em .3em;*/
 }
@@ -102,25 +101,25 @@ option {
   display: inline-block;
 }
 
-.slide {
+/*.slide {
   width: 80%;
   height: 45px;
   display: inline-block;
   float:right;
-/*  background-color: #F47E1F;*/
+  background-color: #F47E1F;
   color: white;
   margin-top: 20px;
   z-index: 8;
-}
+}*/
 
 .title {
 /*  width: 450px;*/
-  padding: 27px;
+  padding: 15px;
   display: inline-block;
   float:left;
-  height: 80px;
-  margin-right: 30px;
-  margin-top:0px;
+  height: 110px;
+  margin-right: 10px;
+/*  margin-top:0px;*/
   background-color: #DDDDDD;
   vertical-align: middle;
   -webkit-box-shadow: 0px 1px 2px #AAA;
@@ -133,43 +132,23 @@ option {
   float:left;
 }
 
-.third {
-  width: 200px;
-  padding: .5em;
-  /*width: 30.5%;*/
-  height: 100%;
-  display: inline-block;
-  display: inline;
-  float: left;
-  vertical-align: middle;
-  z-index: -1;
-  /*background-color: #E6E7E8;*/
-}
-
 .half {
 /*  width: 47.85%;*/
   float:left;
   padding: 10px 10px 10px 10px;
 }
 
-#eventdiv{
-	padding: 10px 10px 10px 60px !important;
-}
-
 .two-third {
-/*  padding: 10px;*/
-  /*margin: 0 0 0 10px;*/
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 100px;
   width:  715px;
   display: inline-block;
   float:left;
   height:100px;
 }
 
-.chart_area .two-third {
-  height: 100%;
-  margin-left: 45px;
+#eventdiv {
+  margin-left: 50px;
 }
 
 .chart_area {
@@ -185,10 +164,11 @@ option {
 }
 
 .checkboxes {
-  margin: 30px 0 0 0; 
+  margin: 0px; 
   display: inline-block;
   float: left;
   line-height: 20px;
+  width: 150px;
 }
 
 label {  
@@ -223,7 +203,7 @@ label:before {
 }
 
 #sam_type {
-  color: #d62728;
+  color: #ff7f0e;
 }
 
 #benjamin_type {
@@ -269,9 +249,9 @@ input[type=checkbox]:checked + label:before {
   border-top-right-radius: 0px;
   border: 0px;
   background: white;
-  height: 8px;
-  width: 900px;
-  margin-top:0px;
+  height: 12px;
+  width: 500px;
+  margin-top:-10px;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
@@ -313,9 +293,10 @@ input[type=checkbox]:checked + label:before {
 
 .question_area {
   margin-right: auto;
-  margin-left: auto;
-  margin-top: 25px;
-  width:  670px;
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 520px;
+  height: 120px;
   display: inline-block;
   float:left;
   height:100px;
@@ -323,8 +304,8 @@ input[type=checkbox]:checked + label:before {
 
 #question {
   display: inline-block;
-  width: 400px;
-  line-height: 3em;
+  width: 300px;
+  line-height: 1.5em;
   text-align: right;
 }
 
@@ -338,10 +319,16 @@ input[type=checkbox]:checked + label:before {
 
 /*map style*/
 #map {
-  position: fixed;
+  width: 350px;
+  height: 100%;
+  display: inline;
+  float: left;
   top: 0px;
   left: 10px;
-  z-index: 0;
+  margin: -150px 0 0 -100px;
+  z-index: -1;
+  display: inline-block;
+  width: 185px;
 }
 
 #Gaza polygon{
@@ -402,6 +389,10 @@ input[type=checkbox]:checked + label:before {
 
 #water polygon{
   fill: #DDDDDD;
+}
+
+#Israel_1_ path{
+  stroke: #5b5b5b;
 }
 
 
