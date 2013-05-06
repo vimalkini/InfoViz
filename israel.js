@@ -377,6 +377,7 @@ $('#check_megilot').change(function(){
 function showevent(glyear) {
 		year = glyear;
 		$("#eventdiv").html('')
+		$("#eventdiv").append('<b> Historic events </b><br><br>');
 		for (i=0; i<events.length; i++){
 			if (events[i]['Year'] == year.toString()){
 				eventssummary = events[i];
