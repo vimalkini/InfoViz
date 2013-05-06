@@ -229,7 +229,7 @@ label:before {
 } 
 
 #gaza_type {
-  color: #7f7f7f;
+  color: #e377c2;
 }
 
 #sam_type {
@@ -253,7 +253,7 @@ label:before {
 } 
 
 #megilot_type {
-  color: #e377c2;
+  color: #8c564b;
 } 
 
 input[type=checkbox]:checked + label:before {  
@@ -357,19 +357,26 @@ input[type=checkbox]:checked + label:before {
   width: 185px;
 }
 
-#Gaza polygon{
-  fill: #7f7f7f;
+.total_pop {
+  /*padding: 10px;*/
+  opacity: .4;
+  float: left;
+  display: inline-block;
+  width: 220px;
+  height: 300px;
+  line-height: 1.5;
 }
 
-#Gaza polygon:hover{
-  fill: #7f7f7f;
+.total_pop div {
+  display: inline-block;
+  
+}
+
+#Gaza polygon{
+  fill: #e377c2;
 }
 
 #Etzion_x5F_Bloc path {
-  fill: #2ca02c;
-}
-
-#Etzion_x5F_Bloc path:hover {
   fill: #2ca02c;
 }
 
@@ -377,15 +384,7 @@ input[type=checkbox]:checked + label:before {
   fill: #d62728;
 }
 
-#Jordan_x5F_Valley path:hover {
-  fill: #d62728;
-}
-
 #Samaria path {
-  fill: #ff7f0e;
-}
-
-#Samaria path:hover {
   fill: #ff7f0e;
 }
 
@@ -393,23 +392,11 @@ input[type=checkbox]:checked + label:before {
   fill: #9467bd;
 }
 
-#Benjamin path:hover {
-  fill: #9467bd;
-}
-
 #Megilot path {
-  fill: #e377c2;
-}
-
-#Megilot path:hover {
-  fill: #e377c2;
+  fill: #8c564b;
 }
 
 #Mount_x5F_Hebron path {
-  fill: #1f77b4;
-}
-
-#Mount_x5F_Hebron path:hover {
   fill: #1f77b4;
 }
 
@@ -419,6 +406,10 @@ input[type=checkbox]:checked + label:before {
 
 #Israel_1_ path{
   stroke: #5b5b5b;
+}
+
+#total {
+  text-align: right;
 }
 
 

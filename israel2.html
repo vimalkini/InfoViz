@@ -33,7 +33,7 @@
             <h3>Little Town in the Desert</h3>
             <h5>Sources:
             <a href="http://www.fmep.org/">Population</a>&nbsp;|
-            <a href="en.wikipedia.org/wiki/Timeline_of_the_Israeli–Palestinian_conflict">Events</a><br><br>
+            <a href="http://en.wikipedia.org/wiki/Timeline_of_the_Israeli–Palestinian_conflict">Events</a><br><br>
 
             Vimal Kini, Gaurav Shetti, Jen Wang<br>
           i247: Information Visualization<br> Spring 2013</h5>
@@ -68,14 +68,37 @@
     <!--// settlement chart is here //-->
     
     <div class="chart_area">
-      <div class="third">
+      <div>
         <div id ="map">
           <p></p>
         </div>
       </div>
 
       <div class="two-third">
-        <p id="chart"></p>
+        <div>
+          <p id="chart"></p>
+        </div>
+        <div class="total_pop">
+          <div id="total">
+            <h3 style="text-decoration:underline;">Population</h3>
+            <h3>Gaza:</h3>
+            <h3>Samaria:</h3>
+            <h3>Benjamin:</h3>
+            <h3>Etzion Bloc:</h3>
+            <h3>Jordan Valley:</h3>
+            <h3>Mount Hebron:</h3>
+            <h3>Megilot:</h3>
+          </div>
+          <div>
+            <h3><span id="t_gaza"></span></h3>
+            <h3><span id="t_samaria"></span></h3>
+            <h3><span id="t_benjamin"></span></h3>
+            <h3><span id="t_etzion"></span></h3>
+            <h3><span id="t_jordan"></span></h3>
+            <h3><span id="t_mount"></span></h3>
+            <h3><span id="t_megilot"></span></h3>
+          </div>
+        </div>
         <div id="eventdiv">
           </p></p>
         </div>
@@ -91,15 +114,7 @@
    
 
     </div>
-    <div id="total">
-      Gaza:<div id="t_gaza"></div>
-      Samaria:<div id="t_samaria"></div>
-      Benjamin:<div id="t_benjamin"></div>
-      Etzion Bloc:<div id="t_etzion"></div>
-      Jordan Valley:<div id="t_jordan"></div>
-      Mount Hebron:<div id="t_mount"></div>
-      Megilot:<div id="t_megilot"></div>
-    </div>
+
   </body>    
 
 <script src="israel.js"></script>
