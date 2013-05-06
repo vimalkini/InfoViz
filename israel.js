@@ -518,6 +518,12 @@ function showevent(glyear) {
   function displayYear(year) {
     /*console.log(year);*/
     gaza = 0;
+    samaria = 0;
+  benjamin = 0;
+ etzion = 0;
+ jordan =0;
+ mount = 0;
+ megilot = 0;
     glyear = Math.round(year);
     dot.data(interpolateData(year), key).call(position).sort(order);
     /*label.text(Math.round(year));*/
