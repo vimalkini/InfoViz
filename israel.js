@@ -271,7 +271,7 @@ $('#check_megilot').change(function(){
 
   // Start a transition that interpolates the data based on year.
   svg.transition()
-      .duration(100000)
+      .duration(130000)
       .ease("linear")
       .tween("year", tweenYear)
       .each("end", enableInteraction);
