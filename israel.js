@@ -95,7 +95,7 @@ svg.append("text")
     .text(1800);*/
 
 // Load the data from the json file.
-d3.json("../pop.json", function(nations) {
+d3.json("pop.json", function(nations) {
 
   // A bisector since many nation's data is sparsely-defined. Empty function
   var bisect = d3.bisector(function(d) { return d[0]; });
