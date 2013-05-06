@@ -523,7 +523,10 @@ function showevent(glyear) {
     /*label.text(Math.round(year));*/
     $( "#slider" ).slider( "value", glyear )
     $('#main_year').empty().append(glyear)
-    $('#t_gaza').empty().append(Math.round(gaza));
+    if (gaza >= 0)
+      {$('#t_gaza').empty().append(Math.round(gaza));}
+    else
+      {$('#t_gaza').empty().append(0);}
     $('#t_samaria').empty().append(Math.round(samaria));
     $('#t_benjamin').empty().append(Math.round(benjamin));
     $('#t_etzion').empty().append(Math.round(etzion));
